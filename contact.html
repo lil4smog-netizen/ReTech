@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logistical Handover Gateway - ShareTech Lab</title>
+    <style>
+        :root { 
+            --bg-deep: #0d0d0e; 
+            --bg-card: #16161a; 
+            --gold-glow: #d4af37; 
+            --text-pure: #ffffff; 
+            --text-dim: #94a3b8; 
+            --border-line: #27272a; 
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, sans-serif; }
+        body { background-color: var(--bg-deep); color: var(--text-pure); padding: 3rem 1.5rem; }
+        .container { max-width: 600px; margin: 0 auto; text-align: center; }
+        .back-link { display: inline-block; color: var(--gold-glow); text-decoration: none; margin-bottom: 2rem; font-size: 0.95rem; font-weight: 600; text-align: left; width: 100%; }
+        h1 { font-size: 2.2rem; font-weight: 900; margin-bottom: 1rem; }
+        p.lead { color: var(--text-dim); margin-bottom: 3rem; line-height: 1.6; }
+        .action-container { background-color: var(--bg-card); border: 1px solid var(--border-line); border-radius: 16px; padding: 3rem 2rem; }
+        .btn-com { display: flex; align-items: center; justify-content: center; gap: 0.8rem; width: 100%; padding: 1.2rem; border-radius: 8px; text-decoration: none; font-size: 1.1rem; font-weight: 700; margin-bottom: 1.2rem; color: #fff; transition: all 0.2s ease; cursor: pointer; border: none; }
+        .btn-com:hover { transform: translateY(-1px); filter: brightness(1.1); }
+        .wa-style { background-color: #25d366; color: #000; }
+        .tel-style { background-color: #007aff; }
+        .campus-note { background: #111113; border-left: 4px solid var(--gold-glow); border-radius: 6px; padding: 1.5rem; text-align: left; margin-top: 3rem; }
+        .campus-note h4 { color: var(--gold-glow); margin-bottom: 0.5rem; font-weight: 700; }
+        .campus-note p { font-size: 0.9rem; color: var(--text-dim); line-height: 1.5; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">&larr; Return to Home Hub</a>
+        <h1>Establish Handover Route</h1>
+        <p class="lead">Connect directly with the engineering student cohort managing collections this week to schedule a rapid physical drop-off.</p>
+        
+        <div class="action-container">
+            <!-- Intercepting trigger via target ID handling script rules -->
+            <button id="whatsappLink" class="btn-com wa-style">
+                💬 Launch WhatsApp Session
+            </button>
+            <a href="tel:+916909399101" class="btn-com tel-style">
+                📞 Execute Direct Voice Call
+            </a>
+        </div>
+
+        <div class="campus-note">
+            <h4>📍 Standard Safe Handover Zones</h4>
+            <p>For mutual safety and convenience, we coordinate all standard drop-offs directly at the main campus entrance checkpoint plaza or right outside the adjacent central rapid transit interchange station terminal.</p>
+        </div>
+    </div>
+
+<script>
+    const WHATSAPP_NUMBER = "916909399101";
+
+    document.getElementById("whatsappLink").addEventListener("click", (e) => {
+        e.preventDefault();
+        // Native clean string handling to open directly into the user application layout
+        window.open("https://wa.me/" + WHATSAPP_NUMBER, "_blank", "noopener");
+    });
+</script>
+</body>
+</html>

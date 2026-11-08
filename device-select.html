@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Asset - Cashify Module Grid</title>
+    <style>
+        :root { --bg-deep: #09090b; --bg-card: #121215; --gold-glow: #d4af37; --text-pure: #ffffff; --text-dim: #a1a1aa; --border-line: #27272a; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, sans-serif; }
+        body { background-color: var(--bg-deep); color: var(--text-pure); padding: 4rem 2rem; }
+        .wrapper { max-width: 1100px; margin: 0 auto; }
+        .back-home { display: inline-block; color: var(--gold-glow); text-decoration: none; margin-bottom: 1.5rem; font-weight: 600; }
+        h1 { font-size: 2.4rem; font-weight: 900; margin-bottom: 0.5rem; text-align: center; }
+        p.step-info { text-align: center; color: var(--text-dim); margin-bottom: 4rem; font-size: 1.05rem; }
+        .cashify-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+        .grid-item { background-color: var(--bg-card); border: 1px solid var(--border-line); border-radius: 14px; padding: 2.5rem 1.5rem; text-align: center; text-decoration: none; color: var(--text-pure); transition: all 0.2s ease; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .grid-item:hover { border-color: var(--gold-glow); transform: translateY(-4px); background-color: #18181c; }
+        .grid-item .icon-box { font-size: 2.8rem; margin-bottom: 1.25rem; color: var(--gold-glow); }
+        .grid-item span { font-weight: 700; font-size: 1.05rem; }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <a href="index.html" class="back-home">&larr; Return to Main Hub</a>
+        <h1>Hardware Selector Network</h1>
+        <p class="step-info">Identify your specific hardware class category below to launch internal linking diagnostic tracks:</p>
+        
+        <div class="cashify-grid">
+            <a href="cat-motherboards.html" class="grid-item">
+                <div class="icon-box">🧱</div>
+                <span>Motherboards</span>
+            </a>
+            <a href="cat-cpus.html" class="grid-item">
+                <div class="icon-box">🎛️</div>
+                <span>CPUs / Processors</span>
+            </a>
+            <a href="cat-gpus.html" class="grid-item">
+                <div class="icon-box">🎮</div>
+                <span>Graphics Cards</span>
+            </a>
+            <a href="cat-ram.html" class="grid-item">
+                <div class="icon-box">⚡</div>
+                <span>RAM Sticks</span>
+            </a>
+            <a href="cat-ssds.html" class="grid-item">
+                <div class="icon-box">⚡</div>
+                <span>Solid State Drives</span>
+            </a>
+            <a href="cat-hdds.html" class="grid-item">
+                <div class="icon-box">💾</div>
+                <span>Hard Disk Drives</span>
+            </a>
+            <a href="cat-laptops.html" class="grid-item">
+                <div class="icon-box">💻</div>
+                <span>Old Laptops</span>
+            </a>
+            <a href="cat-desktops.html" class="grid-item">
+                <div class="icon-box">🖥️</div>
+                <span>Desktop PC Towers</span>
+            </a>
+            <a href="cat-peripherals.html" class="grid-item">
+                <div class="icon-box">🔌</div>
+                <span>Accessories / Cables</span>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

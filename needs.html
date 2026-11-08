@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Active Target Matrix - ShareTech Lab</title>
+    <style>
+        :root { --bg-deep: #09090b; --bg-card: #121215; --gold-glow: #d4af37; --text-pure: #ffffff; --text-dim: #a1a1aa; --border-line: #27272a; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, sans-serif; }
+        body { background-color: var(--bg-deep); color: var(--text-pure); padding: 4rem 1.5rem; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .back-link { display: inline-block; color: var(--gold-glow); text-decoration: none; margin-bottom: 2rem; font-size: 0.95rem; font-weight: 600; }
+        h1 { font-size: 2.5rem; font-weight: 900; margin-bottom: 1rem; }
+        p.desc { color: var(--text-dim); margin-bottom: 3rem; line-height: 1.6; }
+        .cat-box { margin-bottom: 3rem; }
+        .cat-title { font-size: 1.4rem; color: var(--gold-glow); font-weight: 700; border-bottom: 2px solid var(--border-line); padding-bottom: 0.5rem; margin-bottom: 1.5rem; }
+        ul { list-style: none; }
+        li { background-color: var(--bg-card); padding: 1.2rem 1.5rem; border-radius: 8px; margin-bottom: 0.6rem; border: 1px solid var(--border-line); display: flex; justify-content: space-between; align-items: center; }
+        .priority-badge { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; background-color: #1e1e24; color: var(--gold-glow); padding: 0.3rem 0.8rem; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">&larr; Return to Home Hub</a>
+        <h1>Inventory Matrix</h1>
+        <p class="desc">Active components authorized for immediate drop-off registration during this seasonal run:</p>
+        
+        <div class="cat-box">
+            <div class="cat-title">Silicon Hardware Sets</div>
+            <ul>
+                <li>Desktop Motherboards (Intel Core / AMD Socket boards) <span class="priority-badge">High Demand</span></li>
+                <li>Central Processing Units (Multi-core CPUs) <span class="priority-badge">Authorized</span></li>
+                <li>System RAM (Desktop & Laptop memory) <span class="priority-badge">High Demand</span></li>
+                <li>Graphics Cards (GPUs - functional or faulty chips) <span class="priority-badge">Authorized</span></li>
+            </ul>
+        </div>
+        <div class="cat-box">
+            <div class="cat-title">Storage & Enclosures</div>
+            <ul>
+                <li>Solid State Drives & Mechanical Platter HDDs <span class="priority-badge">Sanitization Target</span></li>
+                <li>Laptop Units & Pre-built System Towers <span class="priority-badge">High Demand</span></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Asset - ShareTech Lab</title>
+    <style>
+        :root { --bg-deep: #0d0d0e; --bg-card: #16161a; --gold-glow: #d4af37; --text-pure: #ffffff; --text-dim: #94a3b8; --border-line: #27272a; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, sans-serif; }
+        body { background-color: var(--bg-deep); color: var(--text-pure); padding: 3rem 1.5rem; }
+        .wrapper { max-width: 650px; margin: 0 auto; background-color: var(--bg-card); border: 1px solid var(--border-line); border-radius: 16px; padding: 3rem; }
+        .back-link { display: inline-block; color: var(--gold-glow); text-decoration: none; margin-bottom: 1.5rem; font-size: 0.95rem; font-weight: 600; }
+        h2 { font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem; }
+        p.subtitle { color: var(--text-dim); margin-bottom: 2.5rem; font-size: 0.95rem; }
+        .form-block { margin-bottom: 1.8rem; }
+        label { display: block; margin-bottom: 0.6rem; font-size: 0.95rem; font-weight: 600; }
+        input[type="text"], select, textarea { width: 100%; padding: 0.9rem; background-color: var(--bg-deep); border: 1px solid var(--border-line); border-radius: 8px; color: var(--text-pure); font-size: 1rem; transition: border-color 0.3s; }
+        input:focus, select:focus, textarea:focus { outline: none; border-color: var(--gold-glow); }
+        .legal-check { display: flex; gap: 0.7rem; align-items: flex-start; margin-top: 2rem; }
+        .legal-check input { margin-top: 0.3rem; }
+        .legal-check label { color: var(--text-dim); font-size: 0.85rem; line-height: 1.5; font-weight: 400; }
+        .btn-submit { width: 100%; background-color: var(--gold-glow); color: var(--bg-deep); padding: 1.1rem; font-size: 1.05rem; font-weight: 700; border: none; border-radius: 8px; cursor: pointer; transition: background 0.3s; margin-top: 2rem; }
+        .btn-submit:hover { background-color: #f3e5ab; }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <a href="device-select.html" class="back-link">&larr; Return to Diagnostic Grid</a>
+        <h2>Device Registration</h2>
+        <p class="subtitle">Complete this baseline diagnostic sheet to authorize your hardware log.</p>
+        
+        <!-- Form configured to process via JavaScript entirely to eliminate native server lags -->
+        <form id="enquiryForm">
+            <div class="form-block">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="form-block">
+                <label for="device-type">Hardware Category</label>
+                <select id="device-type" required>
+                    <option value="Core Silicon Components">Core Silicon Components (Motherboards, CPUs, RAM, GPUs)</option>
+                    <option value="Storage Units">Storage Units (Defunct or Working HDDs/SSDs)</option>
+                    <option value="Computing Enclosures">Computing Enclosures (Laptops / Towers)</option>
+                    <option value="Peripheral Elements">Peripheral Elements (Keyboards, Mice, Monitors)</option>
+                </select>
+            </div>
+
+            <div class="form-block">
+                <label for="state">Operational Health Status</label>
+                <select id="state" required>
+                    <option value="Fully Functional">Fully Functional / Power On Pass</option>
+                    <option value="Partial Failure">Partial Failure / Intermittent Operations</option>
+                    <option value="Dead Silicon">Dead Silicon / Raw Scrap Reclamation Only</option>
+                </select>
+            </div>
+
+            <div class="form-block">
+                <label for="log">Inventory Breakdown (Models / Quantities)</label>
+                <textarea id="log" rows="4" placeholder="Example: 2x Kingston 8GB DDR3 Sticks, 1x EVGA GTX 960 (No Video Out)..." required></textarea>
+            </div>
+
+            <div class="legal-check">
+                <input type="checkbox" id="wipe-auth" required>
+                <label for="wipe-auth">I formally grant ShareTech Lab full authorization to carry out an absolute data sterilization process or clean mechanical destruction on all submitted data media.</label>
+            </div>
+
+            <button type="submit" class="btn-submit">Submit Record via WhatsApp</button>
+        </form>
+    </div>
+
+<script>
+    // Your WhatsApp business number
+    const WHATSAPP_NUMBER = "916909399101";
+
+    document.getElementById("enquiryForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        // Collect form information
+        const userName = document.getElementById("name").value.trim();
+        const category = document.getElementById("device-type").value;
+        const condition = document.getElementById("state").value;
+        const itemsList = document.getElementById("log").value.trim();
+
+        // Create WhatsApp message
+        const messageText =
+`Hello ReTech! 👋
+
+I would like to register a computer hardware donation.
+
+📋 DONATION REGISTRATION
+
+👤 Name: ${userName}
+
+💻 Hardware Category: ${category}
+
+⚙️ Operational Condition: ${condition}
+
+📦 Inventory Details:
+${itemsList}
+
+I can also provide photographs of the hardware if required.
+
+Thank you!
+- Submitted through ReTech`;
+
+        // Encode message for WhatsApp
+        const encodedMessage = encodeURIComponent(messageText);
+
+        // Correct WhatsApp URL
+        const whatsappURL =
+            "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodedMessage;
+
+        // Directly open WhatsApp with the prefilled message
+        window.location.href = whatsappURL;
+    });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShareTech Lab - Enterprise Student E-Waste Initiative</title>
+    <style>
+        :root { --bg-deep: #09090b; --bg-card: #121215; --gold-glow: #d4af37; --gold-bright: #f59e0b; --text-pure: #ffffff; --text-dim: #a1a1aa; --border-line: #27272a; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        body { background-color: var(--bg-deep); color: var(--text-pure); min-height: 100vh; display: flex; flex-direction: column; }
+        header {
+    background-color: var(--bg-card);
+    border-bottom: 1px solid var(--border-line);
+    padding: 1.25rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    transition: transform 0.35s ease-in-out;
+    will-change: transform;
+}
+
+header.hide-header {
+    transform: translateY(-100%);
+}
+        .logo { font-size: 1.4rem; font-weight: 800; color: var(--gold-glow); text-transform: uppercase; letter-spacing: 2px; }
+        nav a { color: var(--text-dim); text-decoration: none; margin-left: 1.5rem; transition: color 0.3s; font-size: 0.9rem; font-weight: 500; }
+        nav a:hover, nav a.active { color: var(--gold-glow); }
+        .hero { text-align: center; padding: 8rem 2rem; max-width: 900px; margin: 0 auto; }
+        .hero h1 { font-size: 3.8rem; font-weight: 900; margin-bottom: 1.5rem; letter-spacing: -1px; line-height: 1.15; }
+        .hero h1 span { color: var(--gold-glow); background: linear-gradient(to right, #d4af37, #fbbf24); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { color: var(--text-dim); font-size: 1.2rem; line-height: 1.7; margin-bottom: 3.5rem; max-width: 700px; margin-left: auto; margin-right: auto; }
+        .cta-btn { background: linear-gradient(135deg, var(--gold-glow), #b8860b); color: var(--bg-deep); padding: 1.2rem 3.5rem; font-size: 1.05rem; font-weight: 700; border: none; border-radius: 8px; cursor: pointer; text-decoration: none; transition: all 0.3s ease; display: inline-block; letter-spacing: 0.5px; box-shadow: 0 4px 20px rgba(212, 175, 55, 0.15); }
+        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 25px rgba(212, 175, 55, 0.3); background: #ffffff; color: #000000; }
+        .grid-container { max-width: 1200px; margin: 0 auto 6rem auto; padding: 0 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; width: 100%; }
+        .card { background-color: var(--bg-card); border: 1px solid var(--border-line); border-radius: 16px; padding: 3rem 2rem; text-align: center; transition: all 0.3s ease; }
+        .card:hover { border-color: var(--gold-glow); transform: translateY(-4px); }
+        .card h3 { font-size: 1.4rem; margin-bottom: 1rem; color: var(--gold-glow); font-weight: 700; }
+        .card p { color: var(--text-dim); line-height: 1.6; margin-bottom: 2.5rem; min-height: 4.5rem; font-size: 0.95rem; }
+        .card .btn-secondary { color: var(--gold-glow); text-decoration: none; font-weight: 600; border: 1px solid var(--gold-glow); padding: 0.7rem 1.8rem; border-radius: 6px; transition: all 0.3s; display: inline-block; font-size: 0.9rem; }
+        .card .btn-secondary:hover { background-color: var(--gold-glow); color: var(--bg-deep); }
+        footer { margin-top: auto; text-align: center; padding: 2.5rem; border-top: 1px solid var(--border-line); color: var(--text-dim); font-size: 0.85rem; background-color: var(--bg-card); }
+    main {
+    padding-top: 75px;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">ReTech Lab</div>
+        <nav>
+            <a href="index.html" class="active">Home</a>
+            <a href="device-select.html">Diagnostic Grid</a>
+            <a href="needs.html">Inventory Needed</a>
+            <a href="process.html">Security Protocol</a>
+            <a href="contact.html">Handover Hub</a>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <h1>UPCYCLE UNUSED SILICON<br><span>Fund Higher Tech Education</span></h1>
+            <p>Convert your obsolete hardware payloads, unutilized accessories, and bricked computer systems into fully functional engineering sandbox units for local students.</p>
+            <a href="device-select.html" class="cta-btn">Initialize Hardware Audit</a>
+        </section>
+        <section class="grid-container">
+            <div class="card">
+                <h3>Data Erasure Standards</h3>
+                <p>Learn how our multi-pass software loops erase magnetic arrays or physically shred degraded drives to ensure complete data security.</p>
+                <a href="process.html" class="btn-secondary">Security Matrix</a>
+            </div>
+            <div class="card">
+                <h3>Wanted Hardware Catalog</h3>
+                <p>Browse our active checklist of required computational parts, processors, and peripheral systems for this academic semester.</p>
+                <a href="needs.html" class="btn-secondary">View Matrix</a>
+            </div>
+            <div class="card">
+                <h3>Campus Handovers</h3>
+                <p>Avoid delivery hassles. Review safe and direct drop-off coordination hubs organized right outside university transit centers.</p>
+                <a href="contact.html" class="btn-secondary">Meetup Logistics</a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        &copy; 2026 ShareTech Lab. All Rights Reserved. Student Engineering Research Initiative.
+    </footer>
+    <script>
+    const header = document.querySelector("header");
+
+    let lastScroll = window.scrollY;
+
+    window.addEventListener("scroll", function () {
+
+        const currentScroll = window.scrollY;
+
+        // Keep header visible at the top
+        if (currentScroll <= 50) {
+            header.classList.remove("hide-header");
+        }
+
+        // Hide when scrolling down
+        else if (currentScroll > lastScroll) {
+            header.classList.add("hide-header");
+        }
+
+        // Show when scrolling up
+        else if (currentScroll < lastScroll) {
+            header.classList.remove("hide-header");
+        }
+
+        lastScroll = currentScroll;
+
+    }, { passive: true });
+</script>
+</body>
+</html>
